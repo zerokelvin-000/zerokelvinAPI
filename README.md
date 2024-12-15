@@ -2,12 +2,11 @@
 
 ### Cosa è Zerokelvin API?
 
-Zerokelvin è un servizio offerto da me, che consiste nella gestione di tabelle all'interno di un database.
-L'obiettivo non è quello di guadagnare soldi, bensì di offrire un servizio che sia facile e veloce da usare, ma allo stesso tempo sicuro.
+Zerokelvin è un servizio offerto da me, che consiste nella gestione di tabelle all'interno di un database. Il mio obiettivo è quello di offrire un servizio che sia facile da usare, ma allo stesso tempo sicuro ed economico.
 
 ### Come posso usufruirne?
 
-Per usufruire di questo servizio, è necessario un pagamento. Questo deve essere effettuato sulla pagina apposita, e necessita fino a 48 ore per essere elaborato.
+Per usufruire di questo servizio è necessario un pagamento. Questo deve essere effettuato sulla pagina apposita oppure contattando privatamente [questo account](discord.com/users/730376049317249087), e necessita fino a 48 ore per essere elaborato.
 Una volta eseguito il pagamento, l'utente potrà inserire il token che gli verrà dato all'interno del codice dei suoi progetti, la API si occupa di tutto il resto.
 > [!WARNING]
 > Il token fornito è strettamente personale e non dovrebbe essere condiviso. Una divulgazione non autorizzata potrebbe comportare a una fuga di dati associati al tuo account.
@@ -17,6 +16,8 @@ Una volta eseguito il pagamento, l'utente potrà inserire il token che gli verr�
 Come già detto, metto la sicurezza dei clienti e dei loro dati al primo posto, è per questo che ho sviluppato sistemi di sicurezza contro SQL Injection, DDoS e molto altro.
 
 ### Esempi di utilizzo
+
+Si possono trovare degli esempi in https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples
 
 Per utilizzare questa API, bisogna innanzitutto inserire il proprio token nel file `/configs.php`. La linea precisa in cui inserire i dati può variare, ma in generale si deve cercare una sezione di codice simile a:
 
