@@ -1,5 +1,8 @@
 # Documentazione Zerokelvin API
 
+> [!CAUTION]
+> Attenzione: l'API è ancora in fase di sviluppo, tutti i riferimenti sono eseguiti in locale.
+
 ### Cosa è Zerokelvin API?
 
 Zerokelvin è un servizio offerto da me, che consiste nella gestione di tabelle all'interno di un database. Il mio obiettivo è quello di offrire un servizio che sia facile da usare, ma allo stesso tempo sicuro ed economico.
@@ -17,7 +20,9 @@ Come già detto, metto la sicurezza dei clienti e dei loro dati al primo posto, 
 
 ### Esempi di utilizzo
 
-Si possono trovare degli esempi in https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples
+Si possono trovare degli esempi seguendo questo link https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples.
+
+### Funzionamento e utilizzo pratico 
 
 Per utilizzare questa API, bisogna innanzitutto inserire il proprio token nel file `/configs.php`. La linea precisa in cui inserire i dati può variare, ma in generale si deve cercare una sezione di codice simile a:
 
