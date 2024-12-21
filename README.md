@@ -24,7 +24,7 @@ Si possono trovare degli esempi seguendo questo link https://github.com/zerokelv
 
 ### Funzionamento e utilizzo pratico 
 
-Per utilizzare questa API, bisogna innanzitutto inserire il proprio token nel file `/configs.php`. La linea precisa in cui inserire i dati può variare, ma in generale si deve cercare una sezione di codice simile a:
+Per utilizzare questa API, bisogna innanzitutto inserire il proprio token nel file `/configs.php`, come visibile di seguito o nella [pagina apposita](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/examples/uso%20delle%20credenziali/configs.php)
 
 ``` PHP
 <?php
