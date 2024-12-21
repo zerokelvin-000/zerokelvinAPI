@@ -20,15 +20,15 @@ Come già detto, metto la sicurezza dei clienti e dei loro dati al primo posto, 
 
 ### Esempi di utilizzo
 
-Per visualizzare degli esempi di utilizzo, visitare [la loro pagina](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples)
+Per visualizzare degli esempi di utilizzo, visitare [la loro pagina](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples).
 
 ### Utilizzo con JavaScript
 
-L'applicazione è stata creata utilizzando PHP, come anche gli esempi da me forniti, ma essendo che PHP sta venendo sostituito da linguaggi più semplici, come JavaScript, ho deciso di fornire anche esempi con quest'ultimo, i quali sono visibili [nella cartella degli esempi](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples)
+L'applicazione è stata creata utilizzando PHP, come anche gli esempi da me forniti, ma essendo che PHP sta venendo sostituito da linguaggi più semplici, come JavaScript, ho deciso di fornire anche esempi con quest'ultimo, i quali sono visibili [nella cartella degli esempi](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples).
 
 ### Funzionamento e utilizzo pratico usando PHP
 
-Per utilizzare questa API, bisogna innanzitutto inserire il proprio token nel file `/configs.php`, come visibile di seguito o nella [pagina apposita](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/examples/uso%20delle%20credenziali/configs.php).
+Per utilizzare questa API, bisogna innanzitutto inserire il proprio token nel file `/configs.php`, come visibile di seguito o nella [pagina apposita](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/examples/PHP/uso%20delle%20credenziali/configs.php).
 
 ``` PHP
 <?php
@@ -48,43 +48,7 @@ Per utilizzare questa API, bisogna innanzitutto inserire il proprio token nel fi
     $configs->set_token("token_di_prova");
 ```
 
-Una volta impostato il token dal lato server, dobbiamo potervi accedere dal lato client. Ecco come possiamo farlo.
-
-``` PHP
-<?php
-    require "./uso delle credenziali/configs.php";
-    require "./invio di richieste/4 classe per le richieste/invio_richiesta.php";
-
-    $user_token = $configs->get_token();
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zerokelvin API - Pagina di esempio per l'utilizzo delle credenziali</title>
-</head>
-<body>
-    <p>Il token dell'utente è '<?php echo $user_token ?>'</p>
-    <p>Nel database al momento ci sono <?php
-        $request = new Request();
-
-        $request->set_url("url di destinazione");
-        $request->set_data([
-            "username" => "pino il biricchino",
-            "password" => "pino il nascondino"
-        ]);
-
-        $result = $request->send_request();
-
-        echo $result ?? "58";
-    ?> utenti.</p>
-</body>
-</html>
-```
-Si può trovare questo codice anche [nella pagina di esempio per le richieste](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/examples/pagina_di_esempio.php).
+Una volta impostato il token dal lato server, dobbiamo potervi accedere dal lato client. Per farlo dobbbiamo creare una pagina HTML, in cui inseriamo del codice php per renderla dinamica. Un esempio è disponibile [qui](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/examples/PHP/pagina_di_esempio.php).
 
 Terminato tutto ciò, possiamo avviare il server e usare il servizio, anche se consiglio vivamente di fare dei test locali prima di lanciare l'applicazione.
 
