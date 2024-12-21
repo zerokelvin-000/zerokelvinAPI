@@ -24,21 +24,24 @@ Si possono trovare degli esempi seguendo questo link https://github.com/zerokelv
 
 ### Funzionamento e utilizzo pratico 
 
-Per utilizzare questa API, bisogna innanzitutto inserire il proprio token nel file `/configs.php`, come visibile di seguito o nella [pagina apposita](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/examples/uso%20delle%20credenziali/configs.php)
+Per utilizzare questa API, bisogna innanzitutto inserire il proprio token nel file `/configs.php`, come visibile di seguito o nella [pagina apposita](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/examples/uso%20delle%20credenziali/configs.php).
 
 ``` PHP
 <?php
-  // ...
-  $configurations = [
-    // ...
-    "credentials" => [
-      "zerokelvin" => [
-        "token" => "abcde12345",
-      ]
-    ]
-    // ...
-  ];
-  // ...
+  class Configs{
+      private $user_token;
+
+      public function set_token($user_token){
+          $this->user_token = $user_token;
+      }
+
+      public function get_token(){
+        return $this->user_token;
+      }
+  }
+
+  $configs = new Configs();
+  $configs->set_token("token_di_prova");
 ```
 
 Una volta impostato il token la parte più complessa è completata, e si dovrebbe poter avviare il server.
