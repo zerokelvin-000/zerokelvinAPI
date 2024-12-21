@@ -1,12 +1,9 @@
 <?php
     function send_request($url){
-        $data = ["info" => "prova"];
-
         $options = [
             'http' => [
                 'header' => "Content-Type: application/json\r\n",
                 'method' => 'POST',
-                'content' => json_encode($data)
             ],
         ];
     
