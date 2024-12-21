@@ -20,11 +20,11 @@ Come già detto, metto la sicurezza dei clienti e dei loro dati al primo posto, 
 
 ### Esempi di utilizzo
 
-Si possono trovare degli esempi seguendo questo link https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples.
+Per visualizzare degli esempi di utilizzo, visitare [la loro pagina](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples)
 
 ### Utilizzo con JavaScript
 
-L'applicazione è stata creata utilizzando PHP, come anche gli esempi da me forniti, ma essendo che PHP sta venendo sostituito da linguaggi più semplici, come JavaScript, ho deciso di fornire anche esempi con quest'ultimo, i quali sono visibili [nelle stesse cartelle degli esempi in PHP](
+L'applicazione è stata creata utilizzando PHP, come anche gli esempi da me forniti, ma essendo che PHP sta venendo sostituito da linguaggi più semplici, come JavaScript, ho deciso di fornire anche esempi con quest'ultimo, i quali sono visibili [nella cartella degli esempi](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples)
 
 ### Funzionamento e utilizzo pratico usando PHP
 
