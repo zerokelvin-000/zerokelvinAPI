@@ -20,44 +20,39 @@ Come già detto, metto la sicurezza dei clienti e dei loro dati al primo posto, 
 
 ### Esempi di utilizzo
 
-Si possono trovare degli esempi seguendo questo link https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples.
+Per visualizzare degli esempi di utilizzo, visitare [la loro pagina](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples).
 
-### Funzionamento e utilizzo pratico 
+### Funzionamento della API
 
-Per utilizzare questa API, bisogna innanzitutto inserire il proprio token nel file `/configs.php`, come visibile di seguito o nella [pagina apposita](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/examples/uso%20delle%20credenziali/configs.php).
+Questo è un punto leggermente più teorico, ma utile per chi ha voglia di sapere.
+Innanzitutto dobbiamo partire da un URL, che contiene tutti i dati fondamentali per indirizzarci alla risorsa interessata, un po' come un router wifi.
+Per riassumere i dati dell'URL:
+1. Radice: una parte di indirizzo statica.
+2. Versione: usata per richiedere risorse più o meno aggiornate, usare `latest` per usare l'ultima versione disponibile, oppure `v1`, `v2`, ... .
+3. Classe: indica a quale risorsa vogliamo accedere.
+4. Metodo: indica esattamente cosa vogliamo fare.
 
-``` PHP
-<?php
-  class Configs{
-      private $user_token;
+Qualche esempio:
+* `https://zerokelvin.altervista.org/API/user/list`
+* `https://zerokelvin.altervista.org/API/product/add`
+* `https://zerokelvin.altervista.org/API/finance/calculate`
 
-      public function set_token($user_token){
-          $this->user_token = $user_token;
-      }
+Probabilmente ora sorge un dubbio, ovvero come possiamo dire chi sta eseguendo l'azione? Di quale tabella stiamo parlando?
+Per fare questo, viene usata una richiesta POST, che contiene un URL e dei parametri.
+È possibile trovare una documentazione approfondita delle classi e dei loro metodi, con i rispettivi parametri necessari in ***TODO***.
+Per degli esempi utilizzando JavaScript o PHP, seguire i link [JavaScript](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples/JavaScript) oppure [PHP](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples/PHP).
 
-      public function get_token(){
-        return $this->user_token;
-      }
-  }
+### Utilizzo con JavaScript
 
-  $configs = new Configs();
-  $configs->set_token("token_di_prova");
-```
+L'applicazione è stata creata utilizzando PHP, come anche gli esempi da me forniti, ma essendo che PHP sta venendo sostituito da linguaggi più semplici, come JavaScript, ho deciso di fornire anche esempi con quest'ultimo, i quali sono visibili [nella cartella degli esempi](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples).
 
-Una volta impostato il token la parte più complessa è completata, e si dovrebbe poter avviare il server.
+### Utilizzo con PHP
+
+Per utilizzare questa API, bisogna innanzitutto inserire il proprio token nel file `/configs.php`, come visibile nella [pagina apposita](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/examples/PHP/uso%20delle%20credenziali/configs.php).
+
+Una volta impostato il token dal lato server, dobbiamo potervi accedere dal lato client. Per farlo dobbbiamo creare una pagina HTML, in cui inseriamo del codice php per renderla dinamica. Un esempio è disponibile [qui](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/examples/PHP/pagina_di_esempio.php).
+
+Terminato tutto ciò, possiamo avviare il server e usare il servizio, anche se consiglio vivamente di fare dei test locali prima di lanciare l'applicazione.
+
 > [!NOTE]
 > Il token è compatibile solo con siti certificati `ZeroKelvin`, i quali sono progettati per interagire con la API.
-
-Un esempio di URL sarebbe quindi `https://zerokelvin.altervista.org/latest/tables/addUser`, che ci permette di aggiungere un utente ad una tabella, la quale viene specificata nei parametri della richiesta POST (continuare a leggere per capire meglio).
-
-Per chi volesse capire più a fondo il funzionamento, qui di sotto verrà riportata una breve spiegazione della API.
-Innanzitutto, dobbiamo accedere all'URL, che al momento è `zerokelvin.altervista.org/API`, a questo punto dobbiamo inserire altri parametri, quali
-1. _**Versione**_, le versioni più alte sono generalmente più sicure e indicate con `v1`, `v2` e così via.
-> [!TIP]
-> Inserire `latest` per avere sempre l'ultima versione disponibile della API, questo potrebbe rendere obsoleti metodi usati.
-2. _**Classe**_, una macroclasse, vogliamo interagire con una tabella? Un sensore? ...
-3. Metodo, ci dice esattamente cosa vogliamo fare (esempio, Tabella -> addUser)
-
-Una volta impostato l'URL, si deve inviare una richiesta di tipo POST (`le GET vengono rifiutate per motivi logistici e di sicurezza`) al server, che basandosi sui parametri dati ci dà una risposta.
-> [!NOTE]
-> Nota tecnica: La API non restuirà mai codici HTTP diversi da 200, per garantire più semplicità.
