@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zerokelvin API - Pagina di esempio per l'utilizzo delle credenziali</title>
+    <script src="uso delle credenziali/configs.js"></script>
+    <script src="invio di richieste/4 classe per le richieste/invio_richiesta.js"></script>
+</head>
+<body>
+    <p>Il token dell'utente è <span id="token"></span>.</p>
+    <p>Nel database al momento ci sono <span id="users"></span> utenti.</p>
+</body>
+<script>
+    const token_span = document.getElementById("token");
+    const users_span = document.getElementById("users");
+
+    const request = new Request("url di destinazione",{"username": "pino il biricchino","password": "pino il nascondino"})
+    var response = request.send_request();
+
+    if(response.ok != 200){
+        response = "53";
+    }
+
+    token_span.innerHTML = configs.get_token();
+    users_span.innerHTML = response;
+    console.log(response);
+</script>
+</html>
