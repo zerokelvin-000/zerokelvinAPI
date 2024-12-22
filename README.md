@@ -46,7 +46,7 @@ Per degli esempi utilizzando JavaScript o PHP, seguire i link [JavaScript](https
 
 L'applicazione è stata creata utilizzando PHP, come anche gli esempi da me forniti, ma essendo che PHP sta venendo sostituito da linguaggi più semplici, come JavaScript, ho deciso di fornire anche esempi con quest'ultimo, i quali sono visibili [nella cartella degli esempi](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples).
 
-##### Un esempio
+#### Un esempio
 
 aaa
 
