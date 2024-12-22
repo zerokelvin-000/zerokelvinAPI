@@ -46,7 +46,13 @@ Per degli esempi utilizzando JavaScript o PHP, seguire i link [JavaScript](https
 
 L'applicazione è stata creata utilizzando PHP, come anche gli esempi da me forniti, ma essendo che PHP sta venendo sostituito da linguaggi più semplici, come JavaScript, ho deciso di fornire anche esempi con quest'ultimo, i quali sono visibili [nella cartella degli esempi](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples).
 
+##### Un esempio
+
+aaa
+
 ### Utilizzo con PHP
+
+Se invece si vuole utilizzare PHP, bisogna visitare la [cartella degli esempi in PHP](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples/PHP).
 
 Per utilizzare questa API, bisogna innanzitutto inserire il proprio token nel file `/configs.php`, come visibile nella [pagina apposita](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/examples/PHP/uso%20delle%20credenziali/configs.php).
 
