@@ -42,11 +42,23 @@ Per fare questo, viene usata una richiesta POST, che contiene un URL e dei param
 È possibile trovare una documentazione approfondita delle classi e dei loro metodi, con i rispettivi parametri necessari in ***TODO***.
 Per degli esempi utilizzando JavaScript o PHP, seguire i link [JavaScript](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples/JavaScript) oppure [PHP](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples/PHP).
 
-### Proteggere il proprio token
+### Protezione del proprio token
 
 Come evidenziato in precedenza, il token è indispensabile e deve essere protetto, e per farlo ci sono diversi punti da tenere a mente.
 1. **Non condividerlo con nessuno**, nessuno oltre a te e i tuoi collaboratori deve conoscere il token.
-2. **Se hai bisogno, chiedi**, il modo in cui viene gestito il token secondo il codcie che ho creato è semplice: viene creato un oggetto Configs nel file `configs.*` (che ricordo essere dal lato server), e una volta incluso `configs.*` nella pagina che desideriamo saremo noi a decidere quali informazioni ottenere (vedi 
+2. **Capire il funzionamento**, il modo in cui viene gestito il token secondo il codcie che ho creato è semplice: viene creato un oggetto Configs nel file `configs.*` (che ricordo essere dal lato server), e una volta incluso `configs.*` nella pagina che desideriamo saremo noi a decidere quali informazioni ottenere (vedi [la pagina degli esempi](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples) per capire meglio).
+3. **Se hai bisogno, chiedi**, nel caso in cui qualcosa non è chiaro, è meglio chiedere piuttosto che perdere tutti i dati.
+
+#### Cosa fare se ho perso il token
+
+Dato che il token viene usato per cifrare le informazioni del database, la sua perdita comporterà la perdita di tutti i propri dati. È vivamente consigliato di scrivere il proprio token anche su un pezzo di carta o da qualche parte.
+
+### Requisiti necessari
+
+* **Javascript**: nessun requisito
+* **PHP**: Server per eseguire PHP, [xampp](https://www.apachefriends.org/it/index.html) è ottimo, si possono seguire le istruzioni di [questo video](https://www.youtube.com/watch?v=r0lDDeVkaks) (crediti a @crashprogramming9895)
+
+Nota: Zerokelvin API non ha dipendenze e non usa librerie esterne.
 
 ### Utilizzo con JavaScript
 
