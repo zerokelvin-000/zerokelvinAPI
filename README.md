@@ -3,26 +3,26 @@
 > [!CAUTION]
 > Attenzione: l'API è ancora in fase di sviluppo, tutti i riferimenti sono eseguiti in locale.
 
-### Cosa è Zerokelvin API?
+## Cosa è Zerokelvin API?
 
 Zerokelvin è un servizio offerto da me, che consiste nella gestione di tabelle all'interno di un database. Il mio obiettivo è quello di offrire un servizio che sia facile da usare, ma allo stesso tempo sicuro ed economico.
 
-### Come posso usufruirne?
+## Come posso usufruirne?
 
 Per usufruire di questo servizio è necessario un pagamento. Questo deve essere effettuato sulla pagina apposita oppure contattando privatamente [questo account](discord.com/users/730376049317249087), e necessita fino a 48 ore per essere elaborato.
 Una volta eseguito il pagamento, l'utente potrà inserire il token che gli verrà dato all'interno del codice dei suoi progetti, la API si occupa di tutto il resto.
 > [!WARNING]
 > Il token fornito è strettamente personale e non dovrebbe essere condiviso. Una divulgazione non autorizzata potrebbe comportare a una fuga di dati associati al tuo account.
 
-### È un servizio affidabile?
+## È un servizio affidabile?
 
 Come già detto, metto la sicurezza dei clienti e dei loro dati al primo posto, è per questo che ho sviluppato sistemi di sicurezza contro SQL Injection, DDoS e molto altro.
 
-### Esempi di utilizzo
+## Esempi di utilizzo
 
 Per visualizzare degli esempi di utilizzo, visitare [la loro pagina](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples).
 
-### Funzionamento della API
+## Funzionamento della API
 
 Questo è un punto leggermente più teorico, ma utile per chi ha voglia di sapere.
 Innanzitutto dobbiamo partire da un URL, che contiene tutti i dati fondamentali per indirizzarci alla risorsa interessata, un po' come un router wifi.
@@ -42,33 +42,32 @@ Per fare questo, viene usata una richiesta POST, che contiene un URL e dei param
 È possibile trovare una documentazione approfondita delle classi e dei loro metodi, con i rispettivi parametri necessari in ***TODO***.
 Per degli esempi utilizzando JavaScript o PHP, seguire i link [JavaScript](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples/JavaScript) oppure [PHP](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples/PHP).
 
-### Protezione del proprio token
+## Protezione del proprio token
 
 Come evidenziato in precedenza, il token è indispensabile e deve essere protetto, e per farlo ci sono diversi punti da tenere a mente.
 1. **Non condividerlo con nessuno**, nessuno oltre a te e i tuoi collaboratori deve conoscere il token.
 2. **Capire il funzionamento**, il modo in cui viene gestito il token secondo il codcie che ho creato è semplice: viene creato un oggetto Configs nel file `configs.*` (che ricordo essere dal lato server), e una volta incluso `configs.*` nella pagina che desideriamo saremo noi a decidere quali informazioni ottenere (vedi [la pagina degli esempi](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples) per capire meglio).
 3. **Se hai bisogno, chiedi**, nel caso in cui qualcosa non è chiaro, è meglio chiedere piuttosto che perdere tutti i dati.
 
-#### Cosa fare se ho perso il token
+### Cosa fare se ho perso il token
 
 Dato che il token viene usato per cifrare le informazioni del database, la sua perdita comporterà la perdita di tutti i propri dati. È vivamente consigliato di scrivere il proprio token anche su un pezzo di carta o da qualche parte.
 
-### Requisiti necessari
+## Requisiti necessari
 
 * **Javascript**: nessun requisito
 * **PHP**: Server per eseguire PHP, [xampp](https://www.apachefriends.org/it/index.html) è ottimo, si possono seguire le istruzioni di [questo video](https://www.youtube.com/watch?v=r0lDDeVkaks) (crediti a @crashprogramming9895)
 
 Nota: Zerokelvin API non ha dipendenze e non usa librerie esterne.
 
-### Utilizzo con JavaScript
+## Utilizzo con JavaScript
 
 L'applicazione è stata creata utilizzando PHP, come anche gli esempi da me forniti, ma essendo che PHP sta venendo sostituito da linguaggi più semplici, come JavaScript, ho deciso di fornire anche esempi con quest'ultimo, i quali sono visibili [nella cartella degli esempi](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples).
 
-#### Un esempio in JS
+## Un esempio in JS
 
+### Il file delle configurazioni
 ``` JAVASCRIPT
-// Il file delle configurazioni
-
 class Configs{
     set_token(token){
         this.token = token;
@@ -82,9 +81,9 @@ class Configs{
 const configs = new Configs;
 configs.set_token("token_di_prova");
 ```
-``` JAVASCRIPT
-// Il file per inviare richieste
 
+### Il file per inviare richieste
+``` JAVASCRIPT
 class Request{
     constructor(url, data){
         this.url = url;
@@ -104,9 +103,9 @@ class Request{
     }
 }
 ```
-``` HTML
-<!-- Il file .html (la pagina principale) -->
 
+## Il file .html (la pagina principale)
+``` HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -138,20 +137,19 @@ class Request{
 </html>
 ```
 
-#### Non hai capito qualcosa o hai bisogno di assistenza con la configurazione in JavaScript?
+### Non hai capito qualcosa o hai bisogno di assistenza con la configurazione in JavaScript?
 
 Non ti preoccupare! È possibile conttattarmi privatamente su [questo account](discord.com/users/730376049317249087) via discord, oppure inviandomi un'email all'indirizzo zerokelvin.personal@gmail.com.
 
-### Utilizzo con PHP
+## Utilizzo con PHP
 
 Se invece si preferisce usare il linguaggio nativo, ovvero PHP, ci si può documentare nella [cartella degli esempi in PHP](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples/PHP).
 
-#### Un esempio in PHP
+### Un esempio in PHP
 
+## il file delle configuarzioni
 ``` PHP
 <?php
-    // il file delle configuarzioni
-
     class Configs{
         private $user_token;
 
@@ -168,6 +166,7 @@ Se invece si preferisce usare il linguaggio nativo, ovvero PHP, ci si può docum
     $configs->set_token("token_di_prova");
 ```
 
+## il file per inviare richieste
 ``` PHP
 <?php
     // il file per inviare richieste
@@ -205,10 +204,9 @@ Se invece si preferisce usare il linguaggio nativo, ovvero PHP, ci si può docum
     }
 ```
 
+## il file PHP (la pagina principale)
 ``` PHP
 <?php
-    // il file PHP (la pagina principale)
-
     require "./uso delle credenziali/configs.php";
     require "./invio di richieste/4 classe per le richieste/invio_richiesta.php";
 
