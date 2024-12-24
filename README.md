@@ -104,7 +104,7 @@ class Request{
 }
 ```
 
-## Il file .html (la pagina principale)
+### Il file .html (la pagina principale)
 ``` HTML
 <!DOCTYPE html>
 <html lang="en">
