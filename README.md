@@ -169,8 +169,6 @@ Se invece si preferisce usare il linguaggio nativo, ovvero PHP, ci si può docum
 ## il file per inviare richieste
 ``` PHP
 <?php
-    // il file per inviare richieste
-
     class Request{
         private string $url;
         private array $data;
@@ -207,11 +205,10 @@ Se invece si preferisce usare il linguaggio nativo, ovvero PHP, ci si può docum
 ## il file PHP (la pagina principale)
 ``` PHP
 <?php
-    require "./uso delle credenziali/configs.php";
-    require "./invio di richieste/4 classe per le richieste/invio_richiesta.php";
+    require "configs.php";
+    require "invio_richiesta.php";
 
-    $user_token = $configs->get_token(); // è importante che la classe Configs venga inizializzata solo nel suo file, per tenere al sicuro le informazioni
-
+    $user_token = $configs->get_token();
 ?>
 
 <!DOCTYPE html>
