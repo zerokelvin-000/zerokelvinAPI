@@ -42,23 +42,197 @@ Per fare questo, viene usata una richiesta POST, che contiene un URL e dei param
 È possibile trovare una documentazione approfondita delle classi e dei loro metodi, con i rispettivi parametri necessari in ***TODO***.
 Per degli esempi utilizzando JavaScript o PHP, seguire i link [JavaScript](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples/JavaScript) oppure [PHP](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples/PHP).
 
+### Proteggere il proprio token
+
+Come evidenziato in precedenza, il token è indispensabile e deve essere protetto, e per farlo ci sono diversi punti da tenere a mente.
+1. **Non condividerlo con nessuno**, nessuno oltre a te e i tuoi collaboratori deve conoscere il token.
+2. **Se hai bisogno, chiedi**, il modo in cui viene gestito il token secondo il codcie che ho creato è semplice: viene creato un oggetto Configs nel file `configs.*` (che ricordo essere dal lato server), e una volta incluso `configs.*` nella pagina che desideriamo saremo noi a decidere quali informazioni ottenere (vedi 
+
 ### Utilizzo con JavaScript
 
 L'applicazione è stata creata utilizzando PHP, come anche gli esempi da me forniti, ma essendo che PHP sta venendo sostituito da linguaggi più semplici, come JavaScript, ho deciso di fornire anche esempi con quest'ultimo, i quali sono visibili [nella cartella degli esempi](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples).
 
-#### Un esempio
+#### Un esempio in JS
 
-aaa
+``` JAVASCRIPT
+// Il file delle configurazioni
+
+class Configs{
+    set_token(token){
+        this.token = token;
+    }
+
+    get_token(){
+        return this.token;
+    }
+}
+
+const configs = new Configs;
+configs.set_token("token_di_prova");
+```
+``` JAVASCRIPT
+// Il file per inviare richieste
+
+class Request{
+    constructor(url, data){
+        this.url = url;
+        this.data = data;
+    };
+
+    send_request(){
+        const request = fetch(this.url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(this.data),
+        });
+    
+        return request;
+    }
+}
+```
+``` HTML
+<!-- Il file .html (la pagina principale) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zerokelvin API - Pagina di esempio per l'utilizzo delle credenziali</title>
+    <script src="configs.js"></script>
+    <script src="invio_richiesta.js"></script>
+</head>
+<body>
+    <p>Il token dell'utente è <span id="token"></span>.</p>
+    <p>Nel database al momento ci sono <span id="users"></span> utenti.</p>
+</body>
+<script>
+    const token_span = document.getElementById("token");
+    const users_span = document.getElementById("users");
+
+    const request = new Request("url di destinazione",{"username": "pino il biricchino","password": "pino il nascondino"})
+    var response = request.send_request();
+
+    if(response.ok != 200){
+        response = "53";
+    }
+
+    token_span.innerHTML = configs.get_token();
+    users_span.innerHTML = response;
+    console.log(response);
+</script>
+</html>
+```
+
+#### Non hai capito qualcosa o hai bisogno di assistenza con la configurazione in JavaScript?
+
+Non ti preoccupare! È possibile conttattarmi privatamente su [questo account](discord.com/users/730376049317249087) via discord, oppure inviandomi un'email all'indirizzo zerokelvin.personal@gmail.com.
 
 ### Utilizzo con PHP
 
-Se invece si vuole utilizzare PHP, bisogna visitare la [cartella degli esempi in PHP](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples/PHP).
+Se invece si preferisce usare il linguaggio nativo, ovvero PHP, ci si può documentare nella [cartella degli esempi in PHP](https://github.com/zerokelvin-000/zerokelvinAPI/tree/main/examples/PHP).
 
-Per utilizzare questa API, bisogna innanzitutto inserire il proprio token nel file `/configs.php`, come visibile nella [pagina apposita](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/examples/PHP/uso%20delle%20credenziali/configs.php).
+#### Un esempio in PHP
 
-Una volta impostato il token dal lato server, dobbiamo potervi accedere dal lato client. Per farlo dobbbiamo creare una pagina HTML, in cui inseriamo del codice php per renderla dinamica. Un esempio è disponibile [qui](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/examples/PHP/pagina_di_esempio.php).
+``` PHP
+<?php
+    // il file delle configuarzioni
 
-Terminato tutto ciò, possiamo avviare il server e usare il servizio, anche se consiglio vivamente di fare dei test locali prima di lanciare l'applicazione.
+    class Configs{
+        private $user_token;
+
+        public function set_token($user_token){
+            $this->user_token = $user_token;
+        }
+
+        public function get_token(){
+            return $this->user_token;
+        }
+    }
+
+    $configs = new Configs();
+    $configs->set_token("token_di_prova");
+```
+
+``` PHP
+<?php
+    // il file per inviare richieste
+
+    class Request{
+        private string $url;
+        private array $data;
+
+        public function set_url($url){
+            $this->url = $url;
+        }
+
+        public function set_data($data){
+            $this->data = $data;
+        }
+
+        public function send_request(){
+            $options = [
+                'http' => [
+                    'header' => "Content-Type: application/json",
+                    'method' => 'POST',
+                    'content' => json_encode($this->data)
+                ],
+            ];
+        
+            $context = stream_context_create($options);
+            $request = @file_get_contents($this->url, false, $context);
+            
+            if(!$request){
+                return null;
+            }
+    
+            return $request;
+        }
+    }
+```
+
+``` PHP
+<?php
+    // il file PHP (la pagina principale)
+
+    require "./uso delle credenziali/configs.php";
+    require "./invio di richieste/4 classe per le richieste/invio_richiesta.php";
+
+    $user_token = $configs->get_token(); // è importante che la classe Configs venga inizializzata solo nel suo file, per tenere al sicuro le informazioni
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zerokelvin API - Pagina di esempio per l'utilizzo delle credenziali</title>
+</head>
+<body>
+    <p>Il token dell'utente è '<?php echo $user_token ?>'</p>
+    <p>Nel database al momento ci sono <?php
+        $request = new Request();
+
+        $request->set_url("url di destinazione");
+        $request->set_data([
+            "username" => "pino il biricchino",
+            "password" => "pino il nascondino"
+        ]);
+
+        $result = $request->send_request();
+
+        echo $result ?? "58";
+    ?> utenti.</p>
+</body>
+</html>
+```
+
+#### Non hai capito qualcosa o hai bisogno di assistenza con la configurazione in PHP?
+
+Non ti preoccupare! È possibile conttattarmi privatamente su [questo account](discord.com/users/730376049317249087) via discord, oppure inviandomi un'email all'indirizzo zerokelvin.personal@gmail.com.
 
 > [!NOTE]
 > Il token è compatibile solo con siti certificati `ZeroKelvin`, i quali sono progettati per interagire con la API.
