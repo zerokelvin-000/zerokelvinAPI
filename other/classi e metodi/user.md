@@ -13,9 +13,9 @@ Questa è la lista dei metodi e i rispettivi parametri richiesti della classe Us
 
 1. Metodo `add`, usato per aggiungere utenti nella tabella. I suoi parametri sono `username`, `email`, `password`. [Esempi di utlizzo](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/other/classi%20e%20metodi/user.md#aggiungere-un-utente).
 2. Metodo `edit`, usato per modificare i dati di un utente. I suoi parametri sono `user_id`, `username`, `email`, `password`. [Esempi di utlizzo](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/other/classi%20e%20metodi/user.md#modificare-un-utente).
-3. Metodo `delete`, usato per eliminare un utente. I suoi parametri sono `user_id`. [Esempi di utlizzo](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/other/classi%20e%20metodi/user.md#modificare-un-utente).
-4. Metodo `view`, usato per ottenere le informazioni di un utente. I suoi parametri sono `user_id`. [Esempi di utlizzo](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/other/classi%20e%20metodi/user.md#modificare-un-utente).
-5. Metodo `list`, usato per ottenere le informazioni di tutti gli utenti. Questo metodo non ha parametri. [Esempi di utlizzo](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/other/classi%20e%20metodi/user.md#modificare-un-utente).
+3. Metodo `delete`, usato per eliminare un utente. I suoi parametri sono `user_id`. [Esempi di utlizzo](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/other/classi%20e%20metodi/user.md#eliminare-un-utente).
+4. Metodo `view`, usato per ottenere le informazioni di un utente. I suoi parametri sono `user_id`. [Esempi di utlizzo](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/other/classi%20e%20metodi/user.md#visualizzare-le-informazioni-di-un-utente).
+5. Metodo `list`, usato per ottenere le informazioni di tutti gli utenti. Questo metodo non ha parametri. [Esempi di utlizzo](https://github.com/zerokelvin-000/zerokelvinAPI/blob/main/other/classi%20e%20metodi/user.md#visualizzare-le-informazioni-di-un-utente).
 
 ## Esempi di utilizzo
 
@@ -26,7 +26,7 @@ Di seguito saranno mostrate le richieste nella prima e le risposte nella seconda
 
 ## Aggiungere un utente
 
-#### Richiesta
+### Richiesta
 ``` JSON
 {
   "username": "pietro",
@@ -35,7 +35,7 @@ Di seguito saranno mostrate le richieste nella prima e le risposte nella seconda
 }
 ```
 
-#### Risposta
+### Risposta
 ``` JSON
 {
   "message": "Query riuscita.",
@@ -45,7 +45,7 @@ Di seguito saranno mostrate le richieste nella prima e le risposte nella seconda
 
 ## Modificare un utente
 
-#### Richiesta
+### Richiesta
 ``` JSON
 {
   "user_id": 2,
@@ -65,14 +65,14 @@ Di seguito saranno mostrate le richieste nella prima e le risposte nella seconda
 
 ## Eliminare un utente
 
-#### Richiesta
+### Richiesta
 ``` JSON
 {
   "user_id": 2
 }
 ```
 
-#### Risposta
+### Risposta
 ``` JSON
 {
   "message": "Query riuscita.",
@@ -82,14 +82,14 @@ Di seguito saranno mostrate le richieste nella prima e le risposte nella seconda
 
 ## Visualizzare le informazioni di un utente
 
-#### Richiesta
+### Richiesta
 ``` JSON
 {
   "user_id": 2
 }
 ```
 
-#### Risposta
+### Risposta
 ``` JSON
 {
   "message": "Query riuscita.",
@@ -104,12 +104,12 @@ Di seguito saranno mostrate le richieste nella prima e le risposte nella seconda
 
 ## Visualizzare le informazioni di tutti gli utenti
 
-#### Richiesta
+### Richiesta
 ``` JSON
 {}
 ```
 
-#### Risposta
+### Risposta
 ``` JSON
 {
   "message": "Query riuscita.",
